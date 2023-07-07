@@ -4,7 +4,7 @@ from flask_cors import CORS
 """ author: M G Riveros     Year: 2023
 """
 # Configurar la conexión a la base de datos SQLite
-DATABASE = 'booksIWillRead.db'
+DATABASE = 'inventario.db'
 
 def get_db_connection():
     print("Obteniendo conexión...") # Para probar que se ejecuta la función
