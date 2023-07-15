@@ -5,46 +5,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar producto</title>
+    <title>Agregar Libro</title>
+    <script src="https://kit.fontawesome.com/75770889d9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <h1>Agregar Productos al Inventario</h1>
+    <h1>Agregar Libros al Inventario</h1>
     <div class="img"><img src="img/logo_codo.png" alt="codoacodo" width="100px"></div>
     <h3>Codo a Codo 2023</h3>
     <form id="formulario">
-        <label for="codigo">Código:</label>
+        <label for="codigo">ISBN:</label>
         <input type="text" id="codigo" name="codigo" required><br>
 
         <label for="descripcion">Descripción:</label>
         <input type="text" id="descripcion" name="descripcion" required><br>
 
-        <label for="cantidad">Cantidad:</label>
+        <label for="cantidad">Páginas:</label>
         <input type="number" id="cantidad" name="cantidad" required><br>
 
-        <label for="precio">Precio:</label>
+        <label for="precio">Puntaje:</label>
         <input type="number" step="0.01" id="precio" name="precio" required><br>
-        
-        <label for="photo">Photo:</label>
+
+        <label for="descripcion">Photo:</label>
         <input type="text" id="photo" name="photo" required><br>
-    
-        <br> <br>
 
         <button type="submit">Agregar Producto</button>
         <a href="index.html">Menu principal</a>
     </form>
-    <!-- 
-    <br>
-    <form method="post" action="/" enctype="multipart/form-data">
-        <label for="image">Imagen:</label>
-        <input type="file" name="file" class="form-control" autocomplete="off" required>
 
-        <input type="submit" value="Submit" class="btn btn-info">
-        
-    </form>
-    -->
-    <script src="js/altas.js"></script>
+    <script>
+        //const URL = "http://127.0.0.1:5000/"
+        const URL = "https://gimenariveros.pythonanywhere.com/"
+        // Capturamos el evento de envío del formulario
+        document.getElementById('formulario').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitamos que se envie el form por ahora
+
+            // Obtenemos los valores del formulario
+            var codigo = document.getElementById('codigo').value;
+            var descripcion = document.getElementById('descripcion').value;
+            var cantidad = document.getElementById('cantidad').value;
+            var precio = document.getElementById('precio').value;
+
+            // Creamos un objeto con los datos del producto
+            var producto = {
+                codigo: codigo,
+                descripcion: descripcion,
+                cantidad: cantidad,
+                precio: precio
+            };
+            console.log(producto)
+            // Realizamos la solicitud POST al servidor
+            fetch(URL + 'productos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(producto)
+            })
+                .then(function (response) {
+                    // Código para manejar la respuesta
+                    if (response.ok) {
+                        return response.json(); // Parseamos la respuesta JSON
+                    } else {
+                        // Si hubo un error, lanzar explícitamente una excepción
+                        // para ser "catcheada" más adelante
+                        throw new Error('Error al agregar el producto.');
+                    }
+                })
+                .then(function (data) {
+                    alert('Producto agregado correctamente.');
+                    //Limpiamos el formulario.
+                    document.getElementById('codigo').value = "";
+                    document.getElementById('descripcion').value = "";
+                    document.getElementById('cantidad').value = "";
+                    document.getElementById('precio').value = "";
+                })
+                .catch(function (error) {
+                    // Código para manejar errores
+                    alert('Error al agregar el producto.');
+                });
+        })
+    </script>
+    
+    <footer>
+        <p>Powered by <a href="https://github.com/Gimena-Riveros" target="_blank">Gimena Riveros</a></p>
+    </footer>
 </body>
 
 </html>

@@ -4,23 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrito de compras</title>
+  <title>Carrito de Lectura</title>
+  <script src="https://kit.fontawesome.com/75770889d9.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/vue@next"></script>
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
   <div id="app">
-    <h1>Carrito de compras</h1>
+    <h1>Carrito de Lectura</h1>
     <div class="img"><img src="img/logo_codo.png" alt="codoacodo" width="100px"></div>
     <h3>Codo a Codo 2023</h3>
     <table>
       <thead>
         <tr>
-          <th>Código</th>
+          <th>ISBN</th>
           <th>Descripción</th>
-          <th>Cantidad</th>
-          <th>Precio</th>
+          <th>Páginas</th>
+          <th>Puntaje</th>
+          <th>Photo</th>
           <th>Carrito</th>
         </tr>
       </thead>
@@ -30,6 +32,7 @@
           <td>{{ producto.descripcion }}</td>
           <td align="right">{{ producto.cantidad }}</td>
           <td align="right">&nbsp; &nbsp; {{ producto.precio }}</td>
+          <td align="right">&nbsp; &nbsp; &nbsp; &nbsp; {{ producto.photo }}</td>
           <td>
             <button @click="agregarAlCarrito(producto)">&nbsp;&nbsp;<b>+</b>&nbsp;&nbsp;</button>
             <button @click="restarDelCarrito(producto)">&nbsp;&nbsp;<b>-</b>&nbsp;&nbsp;</button>
@@ -39,14 +42,15 @@
     </table>
 
     <div v-if="mostrarCarrito">
-      <h3>Productos en el carrito:</h3>
+      <h3>Libros en el carrito:</h3>
       <table>
         <thead>
           <tr>
-            <th>Código</th>
+            <th>ISBN</th>
             <th>Descripción</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
+            <th>Páginas</th>
+            <th>Puntaje</th>
+            <th>Photo</th>
           </tr>
         </thead>
         <tbody>
@@ -55,6 +59,7 @@
             <td>{{ item.descripcion }}</td>
             <td align="right">{{ item.cantidad }}</td>
             <td align="right">&nbsp; &nbsp; {{ item.precio }}</td>
+            <td align="center">&nbsp; &nbsp; &nbsp; &nbsp; {{ item.photo }}</td>
           </tr>
         </tbody>
       </table>
@@ -153,6 +158,10 @@
     })
     app.mount('#app')
   </script>
+  
+  <footer>
+    <p>Powered by <a href="https://github.com/Gimena-Riveros" target="_blank">Gimena Riveros</a></p>
+  </footer>
 </body>
 
 </html>

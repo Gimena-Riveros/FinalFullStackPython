@@ -5,21 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baja de Productos</title>
+    <title>Baja del Libro</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <h1>Baja de Productos</h1>
+    <h1>Baja de Libros</h1>
     <div class="img"><img src="img/logo_codo.png" alt="codoacodo" width="100px"></div>
     <h3>Codo a Codo 2023</h3>
     <table>
         <thead>
             <tr>
-                <th>Código</th>
+                <th>ISBN</th>
                 <th>Descripción</th>
-                <th>Cantidad</th>
-                <th align="right">Precio</th>
+                <th>Páginas</th>
+                <th align="right">Puntaje</th>
+                <th align="center">Photo</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -29,6 +30,7 @@
                 <td>{{ producto.descripcion }}</td>
                 <td>{{ producto.cantidad }}</td>
                 <td align="right">{{ producto.precio }}</td>
+                <td align="center">{{ producto.photo }}</td>
                 <td><button @click="eliminarProducto(producto.codigo)">Eliminar</button></td>
             </tr>
         </tbody>
@@ -99,5 +101,9 @@
 
         app.mount('body');
     </script>
+    
+    <footer>
+        <p>Powered by <a href="https://github.com/Gimena-Riveros" target="_blank">Gimena Riveros</a></p>
+    </footer>
 </body>
 </html>
