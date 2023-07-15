@@ -12,5 +12,5 @@
 ### #5 Ahora a gestionar tus libros a leer 😎
 
 <picture>
-  <img src="imgs/readme-app-01.png" alt="Shows an illustrated our app Management of books to read.">
+  <img src="img/readme-app-01.png" alt="Shows an illustrated our app Management of books to read.">
 </picture>
