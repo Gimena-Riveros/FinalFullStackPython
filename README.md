@@ -1,5 +1,6 @@
 # Gestion de Libros a Leer
 ## Trabajo Final Full Stack Python - Codo a Codo 2023
+##### (app funcional y en actualizacion)
 
 ### #1 Verifica la instalacion de Python y + 
 
