@@ -7,5 +7,5 @@
 ### #4 Instala flask en tu VENV 
 ### #5 Ahora a gestionar tus libros a leer 😎
 <picture>
-  <img alt="Shows an illustrated our app Management of books to read." src="imgs/readme-app-01.png">
+  <img src="imgs/readme-app-01.png" alt="Shows an illustrated our app Management of books to read.">
 </picture>
