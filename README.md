@@ -15,3 +15,7 @@
 <picture>
   <img src="img/readme-app-01.png" alt="Shows an illustrated our app Management of books to read.">
 </picture>
+
+<hr> <br/>
+  <h2 align="center">A ⭐ is appreciated to continue growing in the community 👩‍💻</h2> 
+<br/> <hr>
